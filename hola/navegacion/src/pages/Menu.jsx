@@ -9,8 +9,7 @@ export const Menu =()=>{
          <li><Link to="/nosotros">Nosotros</Link> </li>
          <li><Link to="/contactenos">Contactanos </Link></li>
          <li><Link to="/Usuarios">Usuarios</Link></li>
-         <li><Link to="/ListarUsuario">CrearUsuarios</Link></li>
-         <li><Link to="/EditarUsuario">editar</Link></li>
+         <li><Link to="/CrearUsuario">CrearUsuarios</Link></li>
          
         </ul>
       </nav>

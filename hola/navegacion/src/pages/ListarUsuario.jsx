@@ -21,7 +21,7 @@ const Listar=()=>{
   return(
     <div className="m-p3 p-3">
       <p className=" font-bold ">
-        <Link to="/creartarea" > Crear Usuario</Link> 
+        <Link to="/crearusuario" > Crear Usuario</Link> 
       </p>
       <h1 className=" text-center font-bold underline text-3xl"> usuarios</h1>
       {tasks.map((task)=>(

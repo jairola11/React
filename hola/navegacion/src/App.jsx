@@ -15,9 +15,9 @@ import Nosotros from "./pages/Nosotros";
     <Route path='/' element ={<Inicio/>}/>
     <Route path='/nosotros' element ={<Nosotros/>}/>
     <Route path='/contactenos' element ={<Contacto/>}/>
-    <Route path='/Usuarios' element ={<CrearUsuario/>}/>
-    <Route path='/ListarUsuario' element ={<ListarUsuario/>}/>
-    <Route path='/EditarUsuario' element ={<EditarUsuario/>}/>
+    <Route path='/Usuarios' element ={<ListarUsuario/>}/>
+    <Route path='/CrearUsuario' element ={< CrearUsuario/>}/>
+    <Route path='/edit/:id' element ={<EditarUsuario/>}/>
 
     </Route>
    </Routes>
