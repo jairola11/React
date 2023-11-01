@@ -23,10 +23,10 @@ const Listar=()=>{
       <p className=" font-bold ">
         <Link to="/crearusuario" > Crear Usuario</Link> 
       </p>
-      <h1 className=" text-center font-bold underline text-3xl"> usuarios</h1>
-      {tasks.map((task)=>(
-       <div className=" border-y-1 focus:bg-slate-300"  key={task.id}>
-        <Link to={`/edit/${task.id}`}> {task.name}</Link>
+      <h1 className=" text-center font-bold underline text-3xl"> provedor</h1>
+      {provedor.map((provedor)=>(
+       <div className=" border-y-1 focus:bg-slate-300"  key={provedor.id}>
+        <Link to={`/edit/${provedor.id}`}> {provedor.name}</Link>
        </div>
       ))}
     </div>

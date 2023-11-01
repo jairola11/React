@@ -9,7 +9,7 @@ const EditarUsuiario = ()=>{
   useEffect(()=>{
     const buscarUsuario = async ()=>{
       try{
-        const res = await api.get(`/user/${id}`);
+        const res = await api.get(`/user/${id}`); 
         setUsuario(res.data)
       }catch(e){
       console.log('error buscando el usuario',e);
