@@ -1,6 +1,11 @@
 import React from "react";
+import {useNavigate } from "react-router-dom";
 
 const Contacto = () => {
+  const navigate = useNavigate();
+  const handleBack = () =>{
+    navigate("/")
+  }
   return (
     <div className="h-screen flex items-center justify-center">
       <div className="flex">
@@ -39,6 +44,7 @@ const Contacto = () => {
             <button
               type="submit"
               className="bg-blue-500 text-white p-2 rounded-md"
+              onClick={handleBack}
             >
               Enviar
             </button>

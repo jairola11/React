@@ -4,7 +4,7 @@ import api from "../components/Api";
 
 const EditarUsuario = () => {
   const { id } = useParams();
-  const [usuario, setUsuario] = useState({ nombre:`` , email: "", contrasena_usuario:"", documento: "", tipo: "" });
+  const [usuario, setUsuario] = useState({ nombre:"" , email: "", contrasena_usuario:"", documento: "", rol: "" });
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const EditarUsuario = () => {
       } catch (e) {
         console.log("Error buscando el usuario", e);
       }
-    };
+    };  
     buscarUsuario();
   }, [id]);
 
@@ -56,7 +56,7 @@ const EditarUsuario = () => {
           id="nombre"
           name="nombre"
           placeholder="Ingrese nombre"
-          value={usuario.nombre}
+          value={usuario.nombre  ||""}
           onChange={(e) => {
             setUsuario({ ...usuario, nombre: e.target.value });
           }}
@@ -69,7 +69,7 @@ const EditarUsuario = () => {
           id="documento"
           name="documento"
           placeholder="Ingrese Identificaciòn"
-          value={usuario.documento}
+          value={usuario.documento ||""}
           onChange={(e) => {
             setUsuario({ ...usuario, documento: e.target.value });
           }}
@@ -82,7 +82,7 @@ const EditarUsuario = () => {
           id="email"
           name="email"
           placeholder="Ingrese email"
-          value={usuario.email}
+          value={usuario.email  ||""}
           onChange={(e) => {
             setUsuario({ ...usuario, email: e.target.value });
           }}
@@ -95,14 +95,18 @@ const EditarUsuario = () => {
           id="password"
           name="password"
           placeholder="ingrese la contraseña"
-          value={usuario.contrasena_usuario}
+          value={usuario.contrasena_usuario  ||""}
           onChange={(e) => {
             setUsuario({ ...usuario, contrasena_usuario: e.target.value });
           }}
         /> 
       </div> 
       <div className="max-w-xs">
-        <select name="tipo" id="tipo" className="w-full p-2 m-2 text-gray-700 border rounded shadow appearance-none laeding-tight focus:outline-none focus:shodow-outline">
+        <select name="rol" id="rol" className="w-full p-2 m-2 text-gray-700 border rounded shadow appearance-none laeding-tight focus:outline-none focus:shodow-outline"
+        value={usuario.rol  ||""}
+        onChange={(e) => {
+          setUsuario({ ...usuario, rol: e.target.value });
+        }}>
           <option value="coadministrador">Co-Administrador</option>
           <option value="administrador">Administrador</option>
         </select>
