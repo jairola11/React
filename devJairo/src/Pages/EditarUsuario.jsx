@@ -92,21 +92,22 @@ const EditarUsuario = () => {
         <input
           type="password"
           className="w-full p-2 m-2 text-gray-700 border rounded shadow appearance-none laeding-tight focus:outline-none focus:shodow-outline"
-          id="password"
-          name="password"
+          id="contraseña"
+          name="contraseña"
           placeholder="ingrese la contraseña"
-          value={usuario.contrasena_usuario  ||""}
+          value={usuario.contraseña  ||""}
           onChange={(e) => {
-            setUsuario({ ...usuario, contrasena_usuario: e.target.value });
+            setUsuario({ ...usuario, contraseña: e.target.value });
           }}
         /> 
       </div> 
       <div className="max-w-xs">
-        <select name="rol" id="rol" className="w-full p-2 m-2 text-gray-700 border rounded shadow appearance-none laeding-tight focus:outline-none focus:shodow-outline"
-        value={usuario.rol  ||""}
+        <select name="tipo" id="tipo" className="w-full p-2 m-2 text-gray-700 border rounded shadow appearance-none laeding-tight focus:outline-none focus:shodow-outline"
+        value={usuario.tipo  ||""}
         onChange={(e) => {
-          setUsuario({ ...usuario, rol: e.target.value });
+          setUsuario({ ...usuario, tipo: e.target.value });
         }}>
+          <option value="">Seleccione un Rol</option>
           <option value="coadministrador">Co-Administrador</option>
           <option value="administrador">Administrador</option>
         </select>
