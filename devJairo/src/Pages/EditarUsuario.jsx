@@ -4,13 +4,14 @@ import api from "../components/Api";
 
 const EditarUsuario = () => {
   const { id } = useParams();
-  const [usuario, setUsuario] = useState({ nombre:"" , email: "", contrasena_usuario:"", documento: "", rol: "" });
+  const [usuario, setUsuario] = useState({nombre_usuario:""});
   const navigate = useNavigate();
 
   useEffect(() => {
     const buscarUsuario = async () => {
       try {
         const res = await api.get(`/buscar/${id}`);
+        console.log(res);
         /* setUsuario({
           nombre: res.data.nombre_usuario,
           email: res.data.email,
@@ -19,26 +20,26 @@ const EditarUsuario = () => {
           tipo: res.data.tipo
         }); */
         setUsuario(res.data);
-        console.log(res.data.contrasena_usuario);
+        console.log(usuario, res.data[0]);
       } catch (e) {
         console.log("Error buscando el usuario", e);
       }
-    };  
+    };
     buscarUsuario();
   }, [id]);
 
   const handleEditUser = async () => {
     try {
-      await api.put(`/editar/${id}`,usuario);
-      navigate("/")
+      await api.put(`/editar/${id}`, usuario);
+      navigate("/");
     } catch (e) {
       console.log("Error en handleEditUser", e);
     }
   };
   const handleDeleteUser = async () => {
     try {
-      await api.patch(`/deshabilitar/${id}`,usuario);
-      navigate("/")
+      await api.patch(`/deshabilitar/${id}`, usuario);
+      navigate("/");
     } catch (e) {
       console.log("Error en handleDeleteUser", e);
     }
@@ -49,16 +50,16 @@ const EditarUsuario = () => {
       <h1 className="p-3 m-3 font-bold text-center underline text-3-xl">
         Editar Usuario
       </h1>
-       <div className="max-w-xs">
+      <div className="max-w-xs">
         <input
           type="text"
           className="w-full p-2 m-2 text-gray-700 border rounded shadow appearance-none laeding-tight focus:outline-none focus:shodow-outline"
           id="nombre"
           name="nombre"
+          defaultValue={usuario.length > 0 ? usuario[0].nombre_usuario : ""}
           placeholder="Ingrese nombre"
-          value={usuario.nombre  ||""}
-          onChange={(e) => {
-            setUsuario({ ...usuario, nombre: e.target.value });
+          onChange={(e)=>{
+            setUsuario({...usuario, nombre_usuario: e.target.value})
           }}
         />
       </div>
@@ -68,11 +69,8 @@ const EditarUsuario = () => {
           className="w-full p-2 m-2 text-gray-700 border rounded shadow appearance-none laeding-tight focus:outline-none focus:shodow-outline"
           id="documento"
           name="documento"
+          defaultValue={usuario.length > 0 ? usuario[0].documento_usuario : ""}
           placeholder="Ingrese Identificaciòn"
-          value={usuario.documento ||""}
-          onChange={(e) => {
-            setUsuario({ ...usuario, documento: e.target.value });
-          }}
         />
       </div>
       <div className="max-w-xs">
@@ -81,11 +79,8 @@ const EditarUsuario = () => {
           className="w-full p-2 m-2 text-gray-700 border rounded shadow appearance-none laeding-tight focus:outline-none focus:shodow-outline"
           id="email"
           name="email"
+          defaultValue={usuario.length > 0 ? usuario[0].email_usuario : ""}
           placeholder="Ingrese email"
-          value={usuario.email  ||""}
-          onChange={(e) => {
-            setUsuario({ ...usuario, email: e.target.value });
-          }}
         />
       </div>
       <div className="max-w-xs">
@@ -94,19 +89,17 @@ const EditarUsuario = () => {
           className="w-full p-2 m-2 text-gray-700 border rounded shadow appearance-none laeding-tight focus:outline-none focus:shodow-outline"
           id="contraseña"
           name="contraseña"
+          defaultValue={usuario.length > 0 ? usuario[0].contrasena_usuario : ""}
           placeholder="ingrese la contraseña"
-          value={usuario.contraseña  ||""}
-          onChange={(e) => {
-            setUsuario({ ...usuario, contraseña: e.target.value });
-          }}
-        /> 
-      </div> 
+        />
+      </div>
       <div className="max-w-xs">
-        <select name="tipo" id="tipo" className="w-full p-2 m-2 text-gray-700 border rounded shadow appearance-none laeding-tight focus:outline-none focus:shodow-outline"
-        value={usuario.tipo  ||""}
-        onChange={(e) => {
-          setUsuario({ ...usuario, tipo: e.target.value });
-        }}>
+        <select
+          name="tipo"
+          id="tipo"
+          className="w-full p-2 m-2 text-gray-700 border rounded shadow appearance-none laeding-tight focus:outline-none focus:shodow-outline"
+          defaultValue={usuario.length > 0 ? usuario[0].tipo_usuario : ""}
+        >
           <option value="">Seleccione un Rol</option>
           <option value="coadministrador">Co-Administrador</option>
           <option value="administrador">Administrador</option>
@@ -131,4 +124,3 @@ const EditarUsuario = () => {
 };
 
 export default EditarUsuario;
-
