@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .table-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .table {
+            width: 800px;
+            background-color: #f5f5f5;
+            border-collapse: collapse;
+            border: 1px solid #000;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #000;
+        }
+
+        .req {
+            font-weight: bold;
+        }
+
+        .res {
+            font-style: italic;
+        }
+    </style>
+    <title>Documentación del API</title>
+</head>
+<body>
+    <h1>Documentación para Prenderia</h1>
+
+    <div class="table-container">
+        <table class="table t2">
+            <thead>
+                <tr>
+                    <th>
+                        <p class="req">RF:</p>
+                    </th>
+                    <th>
+                        <p class="res">1</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>
+                        <p class="req">Nombre del webservice</p>
+                    </th>
+                    <th>
+                        <p class="res">Token</p>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <p class="req">URL</p>
+                    </th>
+                    <th class="res">localhost:3000/aut/validar</th>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req">Descripcion</p>
+                    </td>
+                    <td>
+                        <p class="res">Genera un token de seguridad para la api</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req">Verbo HTTP</p>
+                    </td>
+                    <td>
+                        <p class="res">POST</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req">Header</p>
+                    </td>
+                    <td>
+                        <p class="res"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req">Usuarios</p>
+                    </td>
+                    <td>
+                        <p class="res">Usuarios, Administrador</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req">Request body form-data</p>
+                    </td>
+                    <td>
+                        { 
+                            "identificacion": 5,
+                            "password": "1233"
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req">Response</p>
+                    </td>
+                    <td>
+                        <p class="res">Correcto: <br>  <li>status: 200 <br></li><li>body:</li></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req"></p>
+                    </td>
+                    <td>
+                        <p class="res">{<br>
+                            "token": "TOKEN generado"<br>
+                                <!-- "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjpbeyJpZENsaWVudGUiOjEsIm5vbWJyZXMiOiJqYWlybyIsImRpcmVjY2lvbiI6Imxlb24xMjMiLCJ0ZWxlZm9ubyI6IjMzMzQzNCIsImZlY2hhTmEiOiIxODk5LTExLTMwVDA0OjU2OjE2LjAwMFoiLCJzdGF0dXMiOjF9XSwiaWF0IjoxNjk3NjU4NTczLCJleHAiOjE2OTc3MDE3NzN9.rkyYXv32fAjV3FeL6qYMTV8rZr3zmtWlhxroHOcAAOg" -->
+                            "message": "Usuario Autorizado"<br> 
+                          }
+                        <br><br>
+                        Incorrecto: <br> <li>status:400</li><br><li>body: {"menssage": "cliente no fue  encontrado..."} </li></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-container">
+        <table class="table t2">
+            <thead>
+                <tr>
+                    <th>
+                        <p class="req">RF:</p>
+                    </th>
+                    <th>
+                        <p class="res">2</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>
+                        <p class="req">Nombre del webservice</p>
+                    </th>
+                    <th>
+                        <p class="res">Registrar clientes</p>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <p class="req">URL</p>
+                    </th>
+                    <th class="res">localhost:3000/cliente/registrar</th>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req">Descripcion</p>
+                    </td>
+                    <td>
+                        <p class="res">Registra un nuevo Cliente en la base de datos</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req">Verbo HTTP</p>
+                    </td>
+                    <td>
+                        <p class="res">POST</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req">Header</p>
+                    </td>
+                    <td>
+                        <p class="res"> Authorization Bearer {TOKEN} content-Type: form-data</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req">Usuarios</p>
+                    </td>
+                    <td>
+                        <p class="res">Administrador</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req">Request body form-data</p>
+                    </td>
+                    <td>
+                        <p class="res">
+                            <br>
+                             <br> {
+                              <br>  "identificacion":2,
+                              <br>"nombres":"darickson",
+                              <br> "direccion":"bogota",
+                              <br> "telefono":"3123",
+                              <br> "fechaNa":"2001-07-20",
+                              <br> "password":"123"
+                              
+                             <br> }
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req">Response</p>
+                    </td>
+                    <td>
+                        <p class="res">Correcto: <br>  <li>status: 200 <br></li><li>body:</li></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req"></p>
+                    </td>
+                    <td>
+                        <p class="res">{
+                            "status": 200,
+                            "message": "Se registro con exito el cliente"
+                          }
+                          <br><br>
+                        Incorrecto: <br> <li>status: 400</li><br><li>body: { <br> "message": "No se registró el cliente" <br> } </li></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-container">
+        <table class="table t2">
+            <thead>
+                <tr>
+                    <th>
+                        <p class="req">RF:</p>
+                    </th>
+                    <th>
+                        <p class="res">3</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>
+                        <p class="req">Nombre del webservice</p>
+                    </th>
+                    <th>
+                        <p class="res">Actualizar cliente</p>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <p class="req">URL</p>
+                    </th>
+                    <th class="res">localhost:3000/cliente/actualizar/:id</th>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req">Descripcion</p>
+                    </td>
+                    <td>
+                        <p class="res">Permite actualizar  los datos de un cliente en especifico </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req">Verbo HTTP</p>
+                    </td>
+                    <td>
+                        <p class="res">PUT</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req">Header</p>
+                    </td>
+                    <td>
+                        <p class="res">Authorization Bearer {TOKEN} content-Type: form-data</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req">Usuarios</p>
+                    </td>
+                    <td>
+                        <p class "res">Administrador</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req">Request body form-data</p>
+                    </td>
+                    <td>
+                        <p class="res">
+                            {<br>
+                                 <br>   "identificacion":1,
+                                 <br>  "nombres":"darickson",
+                                 <br>   "direccion":"bogota",
+                                 <br>   "telefono":"3123",
+                                 <br>   "fechaNa":"2001-09-2",
+                                 <br>   "password":"123"
+                                  
+                               <br> }
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req">Response</p>
+                    </td>
+                    <td>
+                        <p class="res">Correcto: <br>  <li>status: 200 <br></li><li>body:</li></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req"></p>
+                    </td>
+                    <td>
+                        <p class="res">{
+                            "status": 200,
+                            "message": "Se actualizo con exito el cliente"
+                          }<br><br>
+                            Incorrecto: <br> <li>status: 400</li><br><li>body: { <br> "message": "No se  pudo actualizo el cliente" <br> } </li></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+
+    <div class="table-container">
+        <table class="table t2">
+            <thead>
+                <tr>
+                    <th>
+                        <p class="req">RF:</p>
+                    </th>
+                    <th>
+                        <p class="res">4</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>
+                        <p class="req">Nombre del webservice</p>
+                    </th>
+                    <th>
+                        <p class="res">Eliminar cliente</p>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <p class="req">URL</p>
+                    </th>
+                    <th class="res">localhost:3000/cliente/eliminar/:id</th>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req">Descripcion</p>
+                    </td>
+                    <td>
+                        <p class="res">Permite eliminar un cliente en especifico  de la base de datos</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req">Verbo HTTP</p>
+                    </td>
+                    <td>
+                        <p class="res">DELETE</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req">Header</p>
+                    </td>
+                    <td>
+                        <p class="res">Authorization Bearer {TOKEN} content-Type: form-data</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req">Usuarios</p>
+                    </td>
+                    <td>
+                        <p class="res">Administrador</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req">Request body form-data</p>
+                    </td>
+                    <td>
+                        <p class="res"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req">Response</p>
+                    </td>
+                    <td>
+                        <p class="res">Correcto: <br>  <li>status: 200 <br></li><li>body:</li></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="req"></p>
+                    </td>
+                    <td>
+                        <p class="res">{<br>
+                            "message": ""Se elimino el  cliente"
+                        }<br><br>
+                        Incorrecto: <br> <li>status: 400</li><br><li>body: { <br> "message": "No se  elimino el cliente" <br> } </li></p>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+   
+       
+    
+        <div class="table-container">
+            <table class="table t2" >
+                <head>
+                    <tr>
+                        <th>
+                            <p class="req">RF:</p>
+                        </th>
+                        <th>
+                            <p class="res">5</p>
+                        </th>
+                    </tr>
+                </head>
+                <tbody>
+                    <tr>
+                        <th>
+                            <p class="req">Nombre del webservice</p>
+                        </th>
+                        <th>
+                            <p class="res">listar cliente</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p class="req">URL</p>
+                        </th>
+                        <th class="res">localhost:3000/cliente/listar</th>
+                    </tr> 
+                    <tr>
+                        <td>
+                            <p class="req">Descripcion</p>
+                        </td>
+                        <td>
+                            <p class="res">ver los clientes registtados</p>
+                        </td>
+                    </tr>   
+                    <tr>
+                        <td>
+                            <p class="req">Verbo HTTP</p>
+                        </td>
+                        <td>
+                            <p class="res">GET</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Header</p>
+                        </td>
+                        <td>
+                            <p class="res"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Usuarios</p>
+                        </td>
+                        <td>
+                            <p class="res">Administrador, Usuarios</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Request bodyform-data</p>
+                        </td>
+                        <td>
+                            <p class="res"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Response</p>
+                        </td>
+                        <td>
+                            <p class="res">Correcto: <br>  <li>status: 200 <br></li><li>body:</li></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req"></p>
+                        </td>
+                        <td>
+                            <p class="res">
+                                [
+                                {<br>listado de todos los clientes Registardos <br>}]
+                                <br><br>
+                                Incorrecto: <br> <li>status:400</li><br><li>body: { <br> "message":"No se pudo listar los clientes " <br> } </li></p>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-container">
+            <table class="table t2">
+                <head>
+                    <tr>
+                        <th>
+                            <p class="req">RF:</p>
+                        </th>
+                        <th>
+                            <p class="res">6</p>
+                        </th>
+                    </tr>
+                </head>
+                <tbody>
+                    <tr>
+                        <th>
+                            <p class="req">Nombre del webservice</p>
+                        </th>
+                        <th>
+                            <p class="res">Registrar articulo</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p class="req">URL</p>
+                        </th>
+                        <th class="res">localhost:3000/articulos/registrar</th>
+                    </tr> 
+                    <tr>
+                        <td>
+                            <p class="req">Descripcion</p>
+                        </td>
+                        <td>
+                            <p class="res">Permite registrar articulos</p>
+                        </td>
+                    </tr>   
+                    <tr>
+                        <td>
+                            <p class="req">Verbo HTTP</p>
+                        </td>
+                        <td>
+                            <p class="res">POST</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Header</p>
+                        </td>
+                        <td>
+                            <p class="res">Authorization Bearer {TOKEN} content-Type: form-data</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Usuarios</p>
+                        </td>
+                        <td>
+                            <p class="res">Administrador</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Request bodyform-data</p>
+                        </td>
+                        <td>
+                            {
+                            <br>      "nombre":"mazda",
+                              <br>    "tipo":"vehiculo"
+                            <br>  }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Response</p>
+                        </td>
+                        <td>
+                            <p class="res">Correcto: <br>  <li>status: 200 <br></li><li>body:</li></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req"></p>
+                        </td>
+                        <td>
+                            <p class="res">{"message": "Se registró con éxito el artículo "
+                            }<br><br>
+                            Incorrecto: <br> <li>status:400</li><br><li>body: { <br> mensaje: No se pudo registrar el artículo } </li></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-container">
+            <table class="table t2">
+                <head>
+                    <tr>
+                        <th>
+                            <p class="req">RF:</p>
+                        </th>
+                        <th>
+                            <p class="res">7</p>
+                        </th>
+                    </tr>
+                </head>
+                <tbody>
+                    <tr>
+                        <th>
+                            <p class="req">Nombre del webservice</p>
+                        </th>
+                        <th>
+                            <p class="res">Desactivar un articulo</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p class="req">URL</p>
+                        </th>
+                        <th class="res">localhost:3000/articulos/desactivar/:id</th>
+                    </tr> 
+                    <tr>
+                        <td>
+                            <p class="req">Descripcion</p>
+                        </td>
+                        <td>
+                            <p class="res">pone en estado inactivo en  un articulo</p>
+                        </td>
+                    </tr>   
+                    <tr>
+                        <td>
+                            <p class="req">Verbo HTTP</p>
+                        </td>
+                        <td>
+                            <p class="res">PUT</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Header</p>
+                        </td>
+                        <td>
+                            <p class="res">Authorization Bearer {TOKEN} content-Type: form-data</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Usuarios</p>
+                        </td>
+                        <td>
+                            <p class="res">Administrador</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Request bodyform-data</p>
+                        </td>
+                        <td>
+                            <p class="res"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Response</p>
+                        </td>
+                        <td>
+                            <p class="res"><p class="res">Correcto: <br>  <li>status: 200 <br></li><li>body:</li></p></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req"></p>
+                        </td>
+                        <td>
+                            <p class="res">{
+                                "message": "Se desavilito  el artículo"
+                            }<br><br>
+                            Incorrecto: <br> <li>status:400</li><br><li>body: { <br> mensaje: No se desavilito  el artículo } </li></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    
+        <div class="table-container">
+            <table class="table t2">
+                <head>
+                    <tr>
+                        <th>
+                            <p class="req">RF:</p>
+                        </th>
+                        <th>
+                            <p class="res">8</p>
+                        </th>
+                    </tr>
+                </head>
+                <tbody>
+                    <tr>
+                        <th>
+                            <p class="req">Nombre del webservice</p>
+                        </th>
+                        <th>
+                            <p class="res">Registrar alquiler</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p class="req">URL</p>
+                        </th>
+                        <th class="res">localhost:3000/alquiler/registrar</th>
+                    </tr> 
+                    <tr>
+                        <td>
+                            <p class="req">Descripcion</p>
+                        </td>
+                        <td>
+                            <p class="res">Registra un nuevo alquiler</p>
+                        </td>
+                    </tr>   
+                    <tr>
+                        <td>
+                            <p class="req">Verbo HTTP</p>
+                        </td>
+                        <td>
+                            <p class="res">POST</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Header</p>
+                        </td>
+                        <td>
+                            <p class="res">Authorization Bearer {TOKEN} content-Type: form-data</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Usuarios</p>
+                        </td>
+                        <td>
+                            <p class="res">Administrador</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Request bodyform-data</p>
+                        </td>
+                        <td>
+                            <p class="res">{
+                            <br>   " "valor":30000000,
+                            <br> "meses":5,
+                            <br> "descripcion":"vehiculo de alta gama ",
+                            <br> "interes":5,
+                            <br> "fkCliente":1,
+                            <br>  "fkArticulo":1
+                            <br> }</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Response</p>
+                        </td>
+                        <td>
+                            <p class="res">Correcto: <br>  <li>status: 200 <br></li><li>body:</li></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req"></p>
+                        </td>
+                        <td>
+                            <p class="res">"message": "Se registró con éxito el alquiler"<br><br>
+                                Incorrecto: <br> <li>status:400</li><br><li>body: { <br> "message": "No se pudo registrar el alquiler" <br> } </li></p>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-container">
+            <table class="table t2">
+                <head>
+                    <tr>
+                        <th>
+                            <p class="req">RF:</p>
+                        </th>
+                        <th>
+                            <p class="res">9</p>
+                        </th>
+                    </tr>
+                </head>
+                <tbody>
+                    <tr>
+                        <th>
+                            <p class="req">Nombre del webservice</p>
+                        </th>
+                        <th>
+                            <p class="res">Actualizar alquiler</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p class="req">URL</p>
+                        </th>
+                        <th class="res">localhost:3000/alquiler/actualizar/:id</th>
+                    </tr> 
+                    <tr>
+                        <td>
+                            <p class="req">Descripcion</p>
+                        </td>
+                        <td>
+                            <p class="res">Actualiza los datos de un alquiler</p>
+                        </td>
+                    </tr>   
+                    <tr>
+                        <td>
+                            <p class="req">Verbo HTTP</p>
+                        </td>
+                        <td>
+                            <p class="res">PUT</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Header</p>
+                        </td>
+                        <td>
+                            <p class="res">Authorization Bearer {TOKEN} content-Type: form-data</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Usuarios</p>
+                        </td>
+                        <td>
+                            <p class="res">Administrador</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Request bodyform-data</p>
+                        </td>
+                        <td>
+                            <p class="res">
+                                {
+                                <br>    "valor":3000000,
+                                 <br> "meses":5,
+                                 <br>  "descripcion":"vehiculo de alta gama ",
+                                 <br> "interes":5,
+                                 <br>  "fkCliente":1,
+                                 <br>   "fkArticulo":1 }
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Response</p>
+                        </td>
+                        <td>
+                            <p class="res">Correcto: <br>  <li>status: 200 <br></li><li>body:</li></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req"></p>
+                        </td>
+                        <td>
+                            <p class="res">{<br>
+                                "message": "Se actualizó con éxito el alquiler"
+                            }<br><br>
+                            Incorrecto: <br> <li>status:400</li><br><li>body: { <br> "message": "No se pudo actualizar el alquiler'" <br> } </li></p>
+    
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-container">
+            <table class="table t2" >
+                <head>
+                    <tr>
+                        <th>
+                            <p class="req">RF:</p>
+                        </th>
+                        <th>
+                            <p class="res">10</p>
+                        </th>
+                    </tr>
+                </head>
+                <tbody>
+                    <tr>
+                        <th>
+                            <p class="req">Nombre del webservice</p>
+                        </th>
+                        <th>
+                            <p class="res">Registrar interes</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p class="req">URL</p>
+                        </th>
+                        <th class="res">localhost:3000/interes/registrar</th>
+                    </tr> 
+                    <tr>
+                        <td>
+                            <p class="req">Descripcion</p>
+                        </td>
+                        <td>
+                            <p class="res">Registra un nuevo interes</p>
+                        </td>
+                    </tr>   
+                    <tr>
+                        <td>
+                            <p class="req">Verbo HTTP</p>
+                        </td>
+                        <td>
+                            <p class="res">POST</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Header</p>
+                        </td>
+                        <td>
+                            <p class="res">Authorization Bearer {TOKEN} content-Type: form-data</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Usuarios</p>
+                        </td>
+                        <td>
+                            <p class="res">Administrador</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Request bodyform-data</p>
+                        </td>
+                        <td>
+                        <p class="res">{
+                        <br>  
+                            <br>    "mes":5,
+                            <br>  "fecha":"2022-12-12"
+                            <br>      "fkAlquiler":2
+                                  
+                          
+                        <br>  }</p>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Response</p>
+                        </td>
+                        <td>
+                            <p class="res">Correcto: <br>  <li>status: 200 <br></li><li>body:</li></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req"></p>
+                        </td>
+                        <td>
+                            <p class="res">
+                                "message":"Se registró con éxito el interés"
+                                <br><br>
+                                Incorrecto: <br> <li>status:400</li><br><li>body: { <br> "message":"No se pudo registrar el interés" <br> } </li></p>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-container">
+            <table class="table t2">
+                <head>
+                    <tr>
+                        <th>
+                            <p class="req">RF:</p>
+                        </th>
+                        <th>
+                            <p class="res">11</p>
+                        </th>
+                    </tr>
+                </head>
+                <tbody>
+                    <tr>
+                        <th>
+                            <p class="req">Nombre del webservice</p>
+                        </th>
+                        <th>
+                            <p class="res">Eliminar interes</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p class="req">URL</p>
+                        </th>
+                        <th class="res">localhost:3000/interes/eliminar/:d</th>
+                    </tr> 
+                    <tr>
+                        <td>
+                            <p class="req">Descripcion</p>
+                        </td>
+                        <td>
+                            <p class="res">eliminar un interes</p>
+                        </td>
+                    </tr>   
+                    <tr>
+                        <td>
+                            <p class="req">Verbo HTTP</p>
+                        </td>
+                        <td>
+                            <p class="res">DELETE</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Header</p>
+                        </td>
+                        <td>
+                            <p class="res">Authorization Bearer {TOKEN} content-Type: form-data</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Usuarios</p>
+                        </td>
+                        <td>
+                            <p class="res">Administrador</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Request bodyform-data</p>
+                        </td>
+                        <td>
+                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Response</p>
+                        </td>
+                        <td>
+                            <p class="res">Correcto: <br>  <li>status: 200 <br></li><li>body:</li></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req"></p>
+                        </td>
+                        <td>
+                            <p class="res">
+                                { "message": "Se eliminó el interés" }
+                                <br><br>
+                            Incorrecto: <br> <li>status:400</li><br><li>body: { <br> mensaje: No se eliminó el interés } </li></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-container">
+            <table class="table t2">
+                <head>
+                    <tr>
+                        <th>
+                            <p class="req">RF:</p>
+                        </th>
+                        <th>
+                            <p class="res">12</p>
+                        </th>
+                    </tr>
+                </head>
+                <tbody>
+                    <tr>
+                        <th>
+                            <p class="req">Nombre del webservice</p>
+                        </th>
+                        <th>
+                            <p class="res"> listar los interés pagados de los alquiler de un cliente</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p class="req">URL</p>
+                        </th>
+                        <th class="res">localhost:3000/intereses_cliente/:idCliente</th>
+                    </tr> 
+                    <tr>
+                        <td>
+                            <p class="req">Descripcion</p>
+                        </td>
+                        <td>
+                            <p class="res">listar intereses pagados </p>
+                        </td>
+                    </tr>   
+                    <tr>
+                        <td>
+                            <p class="req">Verbo HTTP</p>
+                        </td>
+                        <td>
+                            <p class="res">GET</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Header</p>
+                        </td>
+                        <td>
+                            <p class="res">Authorization Bearer {TOKEN} content-Type: form-data</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Usuarios</p>
+                        </td>
+                        <td>
+                            <p class="res">Administrador</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Request bodyform-data</p>
+                        </td>
+                        <td>
+                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Response</p>
+                        </td>
+                        <td>
+                            <p class="res">Correcto: <br>  <li>status: 200 <br></li><li>body:</li></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req"></p>
+                        </td>
+                        <td>
+                            <p class="res">
+                                [ {
+                                    listado de todos los clientes con interes pagos 
+                                    }]
+                                    
+                                <br><br>
+                            Incorrecto: <br> <li>status:400</li><br><li>body: { <br> mensaje: Error interno del servidor } </li></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-container">
+            <table class="table t2">
+                <head>
+                    <tr>
+                        <th>
+                            <p class="req">RF:</p>
+                        </th>
+                        <th>
+                            <p class="res">13</p>
+                        </th>
+                    </tr>
+                </head>
+                <tbody>
+                    <tr>
+                        <th>
+                            <p class="req">Nombre del webservice</p>
+                        </th>
+                        <th>
+                            <p class="res"> listar los interés pagados de los alquiler de un cliente</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p class="req">URL</p>
+                        </th>
+                        <th class="res">localhost:3000/interes/total_intereses</th>
+                    </tr> 
+                    <tr>
+                        <td>
+                            <p class="req">Descripcion</p>
+                        </td>
+                        <td>
+                            <p class="res">total de intereses por mes y año  </p>
+                        </td>
+                    </tr>   
+                    <tr>
+                        <td>
+                            <p class="req">Verbo HTTP</p>
+                        </td>
+                        <td>
+                            <p class="res">GET</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Header</p>
+                        </td>
+                        <td>
+                            <p class="res">Authorization Bearer {TOKEN} content-Type: form-data</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Usuarios</p>
+                        </td>
+                        <td>
+                            <p class="res">Administrador</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Request bodyform-data</p>
+                        </td>
+                        <td>
+                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Response</p>
+                        </td>
+                        <td>
+                            <p class="res">Correcto: <br>  <li>status: 200 <br></li><li>body:</li></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req"></p>
+                        </td>
+                        <td>
+                            <p class="res">
+                                [ {
+                                    listado de todos lo  intereses recaudados por mes y año 
+                                    }]
+                                    
+                                <br><br>
+                            Incorrecto: <br> <li>status:400</li><br><li>body: { <br> mensaje: No se encontraron registros de intereses} </li></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-container">
+            <table class="table t2">
+                <head>
+                    <tr>
+                        <th>
+                            <p class="req">RF:</p>
+                        </th>
+                        <th>
+                            <p class="res">14</p>
+                        </th>
+                    </tr>
+                </head>
+                <tbody>
+                    <tr>
+                        <th>
+                            <p class="req">Nombre del webservice</p>
+                        </th>
+                        <th>
+                            <p class="res"> listar los interés por pagar  de un alquiler </p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p class="req">URL</p>
+                        </th>
+                        <th class="res">localhost:3000/interes/intereses_pendientes/:idAlquiler</th>
+                    </tr> 
+                    <tr>
+                        <td>
+                            <p class="req">Descripcion</p>
+                        </td>
+                        <td>
+                            <p class="res">total de intereses por mes y año  </p>
+                        </td>
+                    </tr>   
+                    <tr>
+                        <td>
+                            <p class="req">Verbo HTTP</p>
+                        </td>
+                        <td>
+                            <p class="res">GET</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Header</p>
+                        </td>
+                        <td>
+                            <p class="res">Authorization Bearer {TOKEN} content-Type: form-data</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Usuarios</p>
+                        </td>
+                        <td>
+                            <p class="res">Administrador</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Request bodyform-data</p>
+                        </td>
+                        <td>
+                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req">Response</p>
+                        </td>
+                        <td>
+                            <p class="res">Correcto: <br>  <li>status: 200 <br></li><li>body:</li></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="req"></p>
+                        </td>
+                        <td>
+                            <p class="res">
+                                [ {
+                                    listado de todos lo  intereses  y meses pendientes de un alquiler  
+                                    }]
+                                    
+                                <br><br>
+                            Incorrecto: <br> <li>status:400</li><br><li>body: { <br> mensaje:Error interno del servidor} </li></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</body>
+</html>
+
+       
+    
+    

@@ -1,0 +1,129 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "clientes",
+    "dateExported": "2023-11-08T22:36:43.374Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "4264de8f-5afa-40cc-b28a-54f984745bbb",
+            "colId": "cc957872-9071-4473-a699-ecaed1f385e4",
+            "containerId": "",
+            "name": "registrar",
+            "url": "localhost:3000/cliente/registrarJSLA",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-11-07T00:17:17.682Z",
+            "modified": "2023-11-07T00:33:19.100Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjpbeyJpZENsaWVudGUiOjEsIm5vbWJyZXMiOiJ3aWxzb24iLCJkaXJlY2Npb24iOiJsZW9uMTMiLCJ0ZWxlZm9ubyI6IjMxMjMiLCJmZWNoYU5hIjoiMjAwMS0wNy0yMFQwNTowMDowMC4wMDBaIiwic3RhdHVzIjoxfV0sImlhdCI6MTY5OTMxNjYzNCwiZXhwIjoxNjk5MzU5ODM0fQ.JySwu1gB-oxa2jgfbvDWWVFwydodYk1qIFrQtB5IKA4"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"identificacion\":1,\n  \"nombres\":\"wilson\",\n  \"direccion\":\"bogota\",\n  \"telefono\":\"3123\",\n  \"fechaNa\":\"2001-07-20\",\n  \"password\":\"123\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "bd966ae2-931f-4c4f-85d9-1b348cf7bb40",
+            "colId": "cc957872-9071-4473-a699-ecaed1f385e4",
+            "containerId": "",
+            "name": "buscar",
+            "url": "localhost:3000/cliente/buscarJSLA/1",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-11-07T00:17:17.683Z",
+            "modified": "2023-11-07T00:24:17.371Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjpbeyJpZENsaWVudGUiOjEsIm5vbWJyZXMiOiJqYWlybyIsImRpcmVjY2lvbiI6Imxlb24xMjMiLCJ0ZWxlZm9ubyI6IjMzMzQzNCIsImZlY2hhTmEiOiIxODk5LTExLTMwVDA0OjU2OjE2LjAwMFoiLCJzdGF0dXMiOjF9XSwiaWF0IjoxNjk2NjI5NjI2LCJleHAiOjE2OTY2NzI4MjZ9.52MvTqGQr1hh7FGuq8TOlcQwHfzN7MHoUzmgEJHF4g8"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"identificacion\":2,\n  \"nombres\":\"darickson\",\n  \"direccion\":\"bogota\",\n  \"telefono\":\"3123\",\n  \"fechaNa\":\"2001-07-20\",\n  \"password\":\"123\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ba725819-4e82-427d-a543-5f685e7ac127",
+            "colId": "cc957872-9071-4473-a699-ecaed1f385e4",
+            "containerId": "",
+            "name": "listar",
+            "url": "localhost:3000/cliente/listarJSLA",
+            "method": "GET",
+            "sortNum": 35000,
+            "created": "2023-11-07T00:17:17.686Z",
+            "modified": "2023-11-07T00:20:02.339Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjpbeyJpZENsaWVudGUiOjEsIm5vbWJyZXMiOiJqYWlybyIsImRpcmVjY2lvbiI6Imxlb24xMjMiLCJ0ZWxlZm9ubyI6IjMzMzQzNCIsImZlY2hhTmEiOiIxODk5LTExLTMwVDA0OjU2OjE2LjAwMFoiLCJzdGF0dXMiOjF9XSwiaWF0IjoxNjk2NjI5NjI2LCJleHAiOjE2OTY2NzI4MjZ9.52MvTqGQr1hh7FGuq8TOlcQwHfzN7MHoUzmgEJHF4g8"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"identificacion\":2,\n  \"nombres\":\"darickson\",\n  \"direccion\":\"bogota\",\n  \"telefono\":\"3123\",\n  \"fechaNa\":\"2001-07-20\",\n  \"password\":\"123\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "10db41cd-2793-491a-8c0c-852a2f3a2491",
+            "colId": "cc957872-9071-4473-a699-ecaed1f385e4",
+            "containerId": "",
+            "name": "eliminar",
+            "url": "localhost:3000/cliente/eliminar/1",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2023-11-07T00:17:17.684Z",
+            "modified": "2023-11-07T00:30:05.592Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjpbeyJpZENsaWVudGUiOjEsIm5vbWJyZXMiOiJ3aWxzb24iLCJkaXJlY2Npb24iOiJsZW9uMTMiLCJ0ZWxlZm9ubyI6IjMxMjMiLCJmZWNoYU5hIjoiMjAwMS0wNy0yMFQwNTowMDowMC4wMDBaIiwic3RhdHVzIjoxfV0sImlhdCI6MTY5OTMxNjYzNCwiZXhwIjoxNjk5MzU5ODM0fQ.JySwu1gB-oxa2jgfbvDWWVFwydodYk1qIFrQtB5IKA4"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"identificacion\":2,\n  \"nombres\":\"darickson\",\n  \"direccion\":\"bogota\",\n  \"telefono\":\"3123\",\n  \"fechaNa\":\"2001-07-20\",\n  \"password\":\"123\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "51b5b40a-20ff-4342-a754-af8094bda416",
+            "colId": "cc957872-9071-4473-a699-ecaed1f385e4",
+            "containerId": "",
+            "name": "actualizar",
+            "url": "localhost:3000/cliente/actualizarJSLA/1",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2023-11-07T00:17:17.685Z",
+            "modified": "2023-11-07T00:17:17.685Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjpbeyJpZENsaWVudGUiOjEsIm5vbWJyZXMiOiJqYWlybyIsImRpcmVjY2lvbiI6Imxlb24xMjMiLCJ0ZWxlZm9ubyI6IjMzMzQzNCIsImZlY2hhTmEiOiIxODk5LTExLTMwVDA0OjU2OjE2LjAwMFoiLCJzdGF0dXMiOjF9XSwiaWF0IjoxNjk5MDIwMTA3LCJleHAiOjE2OTkwNjMzMDd9.8XCYCq-lpJHlqo4TyRyp3aaId45xSgVfCQ_ljlYGya0"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"identificacion\":3,\n  \"nombres\":\"wilson\",\n  \"direccion\":\"leon13\",\n  \"telefono\":\"3123\",\n  \"fechaNa\":\"2001-07-20\",\n  \"password\":\"123\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

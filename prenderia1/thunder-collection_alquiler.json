@@ -1,0 +1,129 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "alquiler",
+    "dateExported": "2023-11-08T22:37:03.285Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "a4b2dc50-8d13-4f0e-ab60-3f52db1fe7cc",
+            "colId": "fc5830ad-b4fa-4c8b-b26d-f2c1603026a0",
+            "containerId": "",
+            "name": "registrar alquiler",
+            "url": "localhost:3000/alquiler/registrarJSLA",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-11-07T00:18:47.653Z",
+            "modified": "2023-11-07T00:33:52.024Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjpbeyJpZENsaWVudGUiOjEsIm5vbWJyZXMiOiJ3aWxzb24iLCJkaXJlY2Npb24iOiJsZW9uMTMiLCJ0ZWxlZm9ubyI6IjMxMjMiLCJmZWNoYU5hIjoiMjAwMS0wNy0yMFQwNTowMDowMC4wMDBaIiwic3RhdHVzIjoxfV0sImlhdCI6MTY5OTMxNjYzNCwiZXhwIjoxNjk5MzU5ODM0fQ.JySwu1gB-oxa2jgfbvDWWVFwydodYk1qIFrQtB5IKA4"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"valor\":300000,\n  \"fecha\":\"2022-07-18\",\n      \"meses\":4,\n       \"descripcion\":\"vehiculo de media gama  \",\n        \"interes\":5,\n         \"fkCliente\":3,\n          \"fkArticulo\":1\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "d24baf6b-3c95-474d-a675-5dbfd7badc8d",
+            "colId": "fc5830ad-b4fa-4c8b-b26d-f2c1603026a0",
+            "containerId": "",
+            "name": "listar alquiler",
+            "url": "localhost:3000/alquiler/listarJSLA",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-11-07T00:18:47.654Z",
+            "modified": "2023-11-07T00:22:19.748Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjpbeyJpZENsaWVudGUiOjEsIm5vbWJyZXMiOiJqYWlybyIsImRpcmVjY2lvbiI6Imxlb24xMjMiLCJ0ZWxlZm9ubyI6IjMzMzQzNCIsImZlY2hhTmEiOiIxODk5LTExLTMwVDA0OjU2OjE2LjAwMFoiLCJzdGF0dXMiOjF9XSwiaWF0IjoxNjk2NjI5NjI2LCJleHAiOjE2OTY2NzI4MjZ9.52MvTqGQr1hh7FGuq8TOlcQwHfzN7MHoUzmgEJHF4g8"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"valor\":30000,\n  \"fecha\":\"\",\n      \"meses\":5,\n       \"descripcion\":\"vehiculo de alta gama \",\n        \"interes\":5,\n         \"fkCliente\":1,\n          \"fkArticulo\":1\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "982a7a44-5a89-4070-a326-c110582bac59",
+            "colId": "fc5830ad-b4fa-4c8b-b26d-f2c1603026a0",
+            "containerId": "",
+            "name": "buscar alquiler",
+            "url": "localhost:3000/alquiler/buscarJSLA/1",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-11-07T00:18:47.655Z",
+            "modified": "2023-11-07T00:22:33.595Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjpbeyJpZENsaWVudGUiOjEsIm5vbWJyZXMiOiJqYWlybyIsImRpcmVjY2lvbiI6Imxlb24xMjMiLCJ0ZWxlZm9ubyI6IjMzMzQzNCIsImZlY2hhTmEiOiIxODk5LTExLTMwVDA0OjU2OjE2LjAwMFoiLCJzdGF0dXMiOjF9XSwiaWF0IjoxNjk2NjI5NjI2LCJleHAiOjE2OTY2NzI4MjZ9.52MvTqGQr1hh7FGuq8TOlcQwHfzN7MHoUzmgEJHF4g8"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"valor\":30000,\n  \"fecha\":\"\",\n      \"meses\":5,\n       \"descripcion\":\"vehiculo de alta gama \",\n        \"interes\":5,\n         \"fkCliente\":1,\n          \"fkArticulo\":1\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ba46c2d2-fd1d-4997-b75e-a1dd194482bf",
+            "colId": "fc5830ad-b4fa-4c8b-b26d-f2c1603026a0",
+            "containerId": "",
+            "name": "eliminar",
+            "url": "localhost:3000/alquiler/eliminarJSLA/2",
+            "method": "PATCH",
+            "sortNum": 40000,
+            "created": "2023-11-07T00:18:47.656Z",
+            "modified": "2023-11-07T00:22:42.271Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjpbeyJpZENsaWVudGUiOjEsIm5vbWJyZXMiOiJqYWlybyIsImRpcmVjY2lvbiI6Imxlb24xMjMiLCJ0ZWxlZm9ubyI6IjMzMzQzNCIsImZlY2hhTmEiOiIxODk5LTExLTMwVDA0OjU2OjE2LjAwMFoiLCJzdGF0dXMiOjF9XSwiaWF0IjoxNjk2NjI5NjI2LCJleHAiOjE2OTY2NzI4MjZ9.52MvTqGQr1hh7FGuq8TOlcQwHfzN7MHoUzmgEJHF4g8"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"valor\":30000,\n  \"fecha\":\"\",\n      \"meses\":5,\n       \"descripcion\":\"vehiculo de alta gama \",\n        \"interes\":5,\n         \"fkCliente\":1,\n          \"fkArticulo\":1\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "b72e1542-f021-46c8-b844-e106ea99c134",
+            "colId": "fc5830ad-b4fa-4c8b-b26d-f2c1603026a0",
+            "containerId": "",
+            "name": "actualizar alquiler",
+            "url": "localhost:3000/alquiler/actualizarJSLA/1",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2023-11-07T00:18:47.657Z",
+            "modified": "2023-11-07T00:18:47.657Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjpbeyJpZENsaWVudGUiOjEsIm5vbWJyZXMiOiJqYWlybyIsImRpcmVjY2lvbiI6Imxlb24xMjMiLCJ0ZWxlZm9ubyI6IjMzMzQzNCIsImZlY2hhTmEiOiIxODk5LTExLTMwVDA0OjU2OjE2LjAwMFoiLCJzdGF0dXMiOjF9XSwiaWF0IjoxNjk2NjI5NjI2LCJleHAiOjE2OTY2NzI4MjZ9.52MvTqGQr1hh7FGuq8TOlcQwHfzN7MHoUzmgEJHF4g8"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"valor\":3000000,\n  \"fecha\":\"2023-12-12\",\n      \"meses\":5,\n       \"descripcion\":\"vehiculo de alta gama \",\n        \"interes\":5,\n         \"fkCliente\":1,\n          \"fkArticulo\":1\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

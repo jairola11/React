@@ -1,0 +1,28 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "validarToken",
+    "dateExported": "2023-11-08T22:37:10.343Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "12645576-1dde-4899-91f7-bff966117df2",
+            "colId": "72d31060-e795-49a4-8d45-d002b4bf0649",
+            "containerId": "",
+            "name": "validarToken",
+            "url": "localhost:3000/aut/validar",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-10-06T22:00:01.165Z",
+            "modified": "2023-11-07T00:23:54.407Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"identificacion\":3,\n  \"password\":\"123\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

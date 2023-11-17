@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.table {
+    width: 800px;
+    background-color: #f5f5f5;
+    border-collapse: collapse;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #000;
+}
+
+.req {
+    font-weight: bold;
+}
+
+.res {
+    font-style: italic;
+}

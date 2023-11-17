@@ -1,0 +1,129 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "articulos",
+    "dateExported": "2023-11-08T22:37:06.575Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "0fa35704-5d80-41e1-990d-0e155c953ab5",
+            "colId": "fc5b46ef-3a2b-4d1e-acdc-e2d1ab3afc94",
+            "containerId": "",
+            "name": "registrar articulos",
+            "url": "localhost:3000/articulo/registrarJSLA",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-11-07T00:18:58.367Z",
+            "modified": "2023-11-07T00:18:58.367Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjpbeyJpZENsaWVudGUiOjEsIm5vbWJyZXMiOiJqYWlybyIsImRpcmVjY2lvbiI6Imxlb24xMjMiLCJ0ZWxlZm9ubyI6IjMzMzQzNCIsImZlY2hhTmEiOiIxODk5LTExLTMwVDA0OjU2OjE2LjAwMFoiLCJzdGF0dXMiOjF9XSwiaWF0IjoxNjk3NjMyMzE5LCJleHAiOjE2OTc2NzU1MTl9.Pw5Vcmtp0Np6Qe-1CqgGf3GlyFZwdNLp41O6n8BWVvU"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"mazda\",\n  \"tipo\":\"vehiculo\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "5d9f9b44-5ecd-4dbd-8016-f0087f82afcf",
+            "colId": "fc5b46ef-3a2b-4d1e-acdc-e2d1ab3afc94",
+            "containerId": "",
+            "name": "listar articulos",
+            "url": "localhost:3000/articulo/listarJSLA",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-11-07T00:18:58.368Z",
+            "modified": "2023-11-07T00:22:56.337Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjpbeyJpZENsaWVudGUiOjEsIm5vbWJyZXMiOiJqYWlybyIsImRpcmVjY2lvbiI6Imxlb24xMjMiLCJ0ZWxlZm9ubyI6IjMzMzQzNCIsImZlY2hhTmEiOiIxODk5LTExLTMwVDA0OjU2OjE2LjAwMFoiLCJzdGF0dXMiOjF9XSwiaWF0IjoxNjk2NjI5NjI2LCJleHAiOjE2OTY2NzI4MjZ9.52MvTqGQr1hh7FGuq8TOlcQwHfzN7MHoUzmgEJHF4g8"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"mazda\",\n  \"tipo\":\"vehiculo\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6d6cc9c0-b291-424f-83c3-bf895ae74951",
+            "colId": "fc5b46ef-3a2b-4d1e-acdc-e2d1ab3afc94",
+            "containerId": "",
+            "name": "buscar articulos",
+            "url": "localhost:3000/articulo/buscarJSLA/1",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-11-07T00:18:58.370Z",
+            "modified": "2023-11-07T00:23:09.660Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjpbeyJpZENsaWVudGUiOjEsIm5vbWJyZXMiOiJqYWlybyIsImRpcmVjY2lvbiI6Imxlb24xMjMiLCJ0ZWxlZm9ubyI6IjMzMzQzNCIsImZlY2hhTmEiOiIxODk5LTExLTMwVDA0OjU2OjE2LjAwMFoiLCJzdGF0dXMiOjF9XSwiaWF0IjoxNjk2NjI5NjI2LCJleHAiOjE2OTY2NzI4MjZ9.52MvTqGQr1hh7FGuq8TOlcQwHfzN7MHoUzmgEJHF4g8"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"mazda\",\n  \"tipo\": \"vehiculo\"\n \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "d163b9d5-e9ac-49e1-950b-2fdcb5b2ad55",
+            "colId": "fc5b46ef-3a2b-4d1e-acdc-e2d1ab3afc94",
+            "containerId": "",
+            "name": "desavilitar articulos",
+            "url": "localhost:3000/articulo/desavilitarJSLA/2",
+            "method": "PATCH",
+            "sortNum": 40000,
+            "created": "2023-11-07T00:18:58.371Z",
+            "modified": "2023-11-07T00:18:58.371Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjpbeyJpZENsaWVudGUiOjEsIm5vbWJyZXMiOiJqYWlybyIsImRpcmVjY2lvbiI6Imxlb24xMjMiLCJ0ZWxlZm9ubyI6IjMzMzQzNCIsImZlY2hhTmEiOiIxODk5LTExLTMwVDA0OjU2OjE2LjAwMFoiLCJzdGF0dXMiOjF9XSwiaWF0IjoxNjk2NjI5NjI2LCJleHAiOjE2OTY2NzI4MjZ9.52MvTqGQr1hh7FGuq8TOlcQwHfzN7MHoUzmgEJHF4g8"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"mazda\",\n  \"tipo\":\"vehiculo\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e84cafae-c5b0-4636-80d7-6775ae958306",
+            "colId": "fc5b46ef-3a2b-4d1e-acdc-e2d1ab3afc94",
+            "containerId": "",
+            "name": "actualizar articulos",
+            "url": "localhost:3000/articulo/actualizarJSLA/1",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2023-11-07T00:18:58.372Z",
+            "modified": "2023-11-07T00:23:20.577Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjpbeyJpZENsaWVudGUiOjEsIm5vbWJyZXMiOiJqYWlybyIsImRpcmVjY2lvbiI6Imxlb24xMjMiLCJ0ZWxlZm9ubyI6IjMzMzQzNCIsImZlY2hhTmEiOiIxODk5LTExLTMwVDA0OjU2OjE2LjAwMFoiLCJzdGF0dXMiOjF9XSwiaWF0IjoxNjk2NjI5NjI2LCJleHAiOjE2OTY2NzI4MjZ9.52MvTqGQr1hh7FGuq8TOlcQwHfzN7MHoUzmgEJHF4g8"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"mercedes\",\n  \"tipo\":\"vehiculo\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
