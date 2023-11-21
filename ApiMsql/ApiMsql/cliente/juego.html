@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div class="rows">
+      <button class="btn btn-primary"  onclick="nuevoJuego()"> Nuevo</button>
+      <a href="index.html"><button class="btn btn-primary"> Usuario</button></a>
+    </div>
+    <div class="rows">
+      <table class="table table-striped-columns">
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Imagen</th>
+        <th>Precio</th>
+        <tbody id="tabla-juegos"></tbody>
+      </table>
+    </div>
+  </div>
+<!-- Modal -->
+<div class="modal fade  modal-lg" id="ModalJuego" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Administrador de Juegos</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+         <form>
+          <input type="hidden" id='id_juego' >
+          <div class="rows">
+            <div class="col-4">
+              <label >Nombre:</label>
+            </div>
+            <div class="col-8">
+              <input type="text" class="form-control" id="nombre" placeholder="Digitar Nombre "> 
+            </div>
+          </div>
+          <div class="rows">
+            <div class="col-4">
+              <label >Descripcion:</label>
+            </div>
+            <div class="col-8">
+              <input type="text" class="form-control" id="descripcion" placeholder="Digitar una Descripcion "> 
+            </div>
+          </div>
+          <div class="rows">
+            <div class="col-4">
+              <label >Imagen:</label>
+            </div>
+            <div class="col-8">
+              <input type="file" name="imagen" id="imagen">
+            </div>
+          </div>
+          <div class="rows">
+            <div class="col-4">
+              <label >Precio:</label>
+            </div>
+            <div class="col-8">
+              <input type="text" class="form-control" id="precio" placeholder="Digitar un Precio "> 
+            </div>
+          </div>
+         </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button"  id="btnupdate" class="btn btn-primary" onclick="actualizarJuego()">Actualizar</button>
+        <button type="button" id="btnsave" class="btn btn-primary" onclick="guardarJuego()">Registrar</button>
+        <input type="hidden" id="usuarioId" name="usuarioId" value="">
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script></body>
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ <script src="juego.js"></script>
+ 
+</html>

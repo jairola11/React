@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div class="rows">
+      <button class="btn btn-primary"  onclick="nuevoUsuario()"> Nuevo</button>
+      <a href="juego.html"><button class="btn btn-primary"> Juegos</button></a>
+    </div>
+    <div class="rows">
+      <table class="table table-striped-columns">
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Direccion</th>
+        <th>Telefono</th>
+        <th>Rol</th>
+        <tbody id="tabla-usuario"></tbody>
+      </table>
+    </div>
+  </div>
+<!-- Modal -->
+<div class="modal fade  modal-lg" id="ModalUsuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog " >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Administrador de Usuario</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+         <form >
+          <input type=" number" id='id_usuario' readonly="true" value="">
+          <div class="rows">
+            <div class="col-4">
+              <label > Nombres:</label>
+            </div>
+            <div class="col-8">
+              <input type="text" class="form-control" id="nombres" placeholder="Digitar su nombre "> 
+            </div>
+          </div>
+          <div class="rows">
+            <div class="col-4">
+              <label > direccion:</label>
+            </div>
+            <div class="col-8">
+              <input type="text" class="form-control" id="direccion" placeholder="Digitar una  direccion "> 
+            </div>
+          </div>
+          <div class="rows">
+            <div class="col-4">
+              <label > telefono:</label>
+            </div>
+            <div class="col-8">
+              <input type="text" class="form-control" id="telefono" placeholder="Digitar un de  telefono "> 
+            </div>
+          </div>
+          <div class="rows">
+            <div class="col-4">
+              <label > correo:</label>
+            </div>
+            <div class="col-8">
+              <input type="text" class="form-control" id="correo" placeholder="Digitar un  correo "> 
+            </div>
+          </div>
+          <div class="rows">
+            <div class="col-4">
+              <label > rol:</label>
+            </div>
+            <div class="col-8">
+            <select class="form-control" id="rol">
+              <option value="administrador">Administrador</option>
+              <option value="usuario">Usuario</option>
+            </select>
+            </div>
+          </div>
+         </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button"  id="btnupdate" class="btn btn-primary" onclick="actualizarUsuario()">Actualizar</button>
+        <button type="button" id="btnsave" class="btn btn-primary" onclick="guardarUsuario()">Registrar</button>
+        <input type="hidden" id="usuarioId" name="usuarioId" value="">
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script></body>
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ <script src="app.js"></script>
+ 
+</html>
