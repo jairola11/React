@@ -155,5 +155,4 @@ function limpiarFormulario() {
   document.getElementById('telefono').value="";
   document.getElementById('correo').value="";
   document.getElementById('rol').value="";
-  
 }

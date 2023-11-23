@@ -4,10 +4,10 @@ import {registrarJuego,cargarImagen,listarJuego,buscarJuego,eliminarJuego,actual
 import {validarToken} from '../controller/autenticacion.controller.js';
 const juegosRoute = Router();
 
-juegosRoute.post('/registrar',validarToken,cargarImagen,registrarJuego);
+juegosRoute.post('/registrar',cargarImagen,registrarJuego);
 juegosRoute.get('/listar',listarJuego);
 juegosRoute.get('/buscar/:id',buscarJuego);
-juegosRoute.delete('/eliminar/:id',validarToken,eliminarJuego);
-juegosRoute.put('/actualizar/:id',validarToken,actualizarJuego);
+juegosRoute.delete('/eliminar/:id',eliminarJuego);
+juegosRoute.put('/actualizar/:id',actualizarJuego);
 
 export default juegosRoute;
