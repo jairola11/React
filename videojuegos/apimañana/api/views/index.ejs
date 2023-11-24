@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Documentacion de la Api</title>
+</head>  
+<body>
+    <div class="main-container">
+        <h1>Documentacion Usuarios</h1>
+        <div class="container">
+        <h2>Ingresar Usuarios</h2>
+        <div class="table-style">
+            <table>
+                <thead>
+                    <th class="column">Numero</th>
+                    <th>1</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="column">Nombre del websirve</td>
+                        <td>Registrar un nuevo usuario</td>
+
+                    </tr>
+                    <tr>
+                        <td class="column">URL</td>
+                        <td>http://localhost:4000/usuario/registrar</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Descripcion</td>
+                        <td>El Administrador registrar a un nuevo usuario, el cual debe de ser ingresado con sus respectivos datos</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Verbo HTTP</td>
+                        <td>POST</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Header</td>
+                        <td>Content-Type: application/json <br>
+                            Authorization Bearer {TOKEN}</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Usuario</td>
+                        <td>Administrador</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <div class="table-style-2">
+                <table>
+                    <tbody>
+                        <thead>
+                        <tr>
+                            <td class="column">Request bodyform-data</td>
+                            <td>{<br>
+                                "idUsuario":"12",<br>
+                                "nombres":"Jorge",<br>
+                                "direccion":"Cr10",<br>
+                                "telefono": 31242353,<br>
+                                "correo":"jogeelcurioso@gmail.com",<br>
+                                "rol":"usuario"<br>
+                            }</td>
+                        </tr>
+                        <tr>
+                            <td class="column">Response</td>
+                            <td>Correcto <br>
+                                •	Status: 200 <br>
+                                •	Body: <br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class="column"></td>
+                            <td>{ <br>
+                                "message”: “El usuario se registró con éxito"<br>
+                        }<br>
+                        Incorrecto:<br>
+                        •	Status:400<br>
+                        •	Body:<br>
+                        {<br>
+                                "message”: “El usuario no se registró"<br>
+                        }<br>
+                        No autorizado:<br>
+                        •	Status:500
+                        •	Body:<br>
+                        {
+                        <br>"message”: “Error en el servidor"<br>
+                        }
+                        
+                        
+                        </td>
+                        </tr>
+                        </thead>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="container">
+        <h2>Listar Usuarios</h2>
+        <div class="table-style">
+            <table>
+                <thead>
+                    <th class="column">Numero</th>
+                    <th>2</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="column">Nombre del websirve</td>
+                        <td>Listar Usuarios</td>
+
+                    </tr>
+                    <tr>
+                        <td class="column">URL</td>
+                        <td>http://localhost:4000/usuario/listarusuario</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Descripcion</td>
+                        <td>El usuario lista todos los usuarios que están guardados en la base de datos</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Verbo HTTP</td>
+                        <td>GET</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Header</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="column">Usuario</td>
+                        <td>Administrador</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <div class="table-style-2">
+                <table>
+                    <tbody>
+                        <thead>
+                        <tr>
+                            <td class="column">Request bodyform-data</td>
+                            <td>No aplica</tr>
+                        <tr>
+                            <td class="column">Response</td>
+                            <td>Correcto <br>
+                                •	Status: 200 <br>
+                                •	Body:
+                                <br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class="column"></td>
+                            <td>{<br>
+                                "idusuario": 3,<br>
+                                "nombres": "Daniel",<br>
+                                "direccion": "cr5",<br>
+                                "telefono": "3144335641",<br>
+                                "correo": "dcordobaruizv@gmail.com",<br>
+                                "rol": "administrador",<br>
+                                "password": null<br>
+                            },<br>
+                            {<br>
+                                "idusuario": 4,<br>
+                                "nombres": "Daniel",<br>
+                                "direccion": "cr5",<br>
+                                "telefono": "3144335641",<br>
+                                "correo": "dcordobaruizv@gmail.com",<br>
+                                "rol": "administrador",<br>
+                                "password": null<br>
+                            },<br>
+                        No autorizado:<br>
+                        •	Status:500<br>
+                        •	Body:<br>
+                        {
+                        <br>"message”: “Error en el servidor"<br>
+                        }
+                        
+                        
+                        </td>
+                        </tr>
+                        </thead>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="container">
+        <h2>Buscar usuario</h2>
+        <div class="table-style">
+            <table>
+                <thead>
+                    <th class="column">Numero</th>
+                    <th>3</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="column">Nombre del websirve</td>
+                        <td>Buscar usuario </td>
+
+                    </tr>
+                    <tr>
+                        <td class="column">URL</td>
+                        <td>http://localhost:4000/buscarusuario/:id</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Descripcion</td>
+                        <td>El usuario puede buscar al usuario con el id del mismo</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Verbo HTTP</td>
+                        <td>GET</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Header</td>
+                        <td>Parameter: {id}</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Usuario</td>
+                        <td>Administrador</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <div class="table-style-2">
+                <table>
+                    <tbody>
+                        <thead>
+                        <tr>
+                            <td class="column">Request bodyform-data</td>
+                            <td>No aplica</tr>
+                        <tr>
+                            <td class="column">Response</td>
+                            <td>Correcto <br>
+                                •	Status: 200 <br>
+                                •	Body:
+                                <br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class="column"></td>
+                            <td>{<br>
+                                "idusuario": 12,<br>
+                                "nombres": "Jorge",<br>
+                                "direccion": "Cr10",<br>
+                                "telefono": "31242353",<br>
+                                "correo": "jogeelcurioso@gmail.com",<br>
+                                "rol": "usuario",<br>
+                                "password": null<br>
+                            }
+                            <br>
+                        No autorizado:<br>
+                        •	Status:500
+                        •	Body:<br>
+                        {
+                        <br>"message”: “Error en el servidor"<br>
+                        }
+                        
+                        
+                        </td>
+                        </tr>
+                        </thead>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="container">
+        <h2>Eliminar usuario</h2>
+        <div class="table-style">
+            <table>
+                <thead>
+                    <th class="column">Numero</th>
+                    <th>4</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="column">Nombre del websirve</td>
+                        <td>Eliminar usuario </td>
+
+                    </tr>
+                    <tr>
+                        <td class="column">URL</td>
+                        <td>http://localhost:4000/eliminar/:id</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Descripcion</td>
+                        <td>El administrador puede eliminar los datos de un usuario a través de su ID</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Verbo HTTP</td>
+                        <td>DELETE</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Header</td>
+                        <td>Parameter: {id}
+                            Authorization Bearer {TOKEN}</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Usuario</td>
+                        <td>Administrador</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <div class="table-style-2">
+                <table>
+                    <tbody>
+                        <thead>
+                        <tr>
+                            <td class="column">Request bodyform-data</td>
+                            <td>No aplica</tr>
+                        <tr>
+                            <td class="column">Response</td>
+                            <td>Correcto <br>
+                                •	Status: 200 <br>
+                                •	Body:
+                                <br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class="column"></td>
+                            <td>{ <br>
+                                "message":"El usuario se elimino con éxito"<br>
+                                }<br>
+                                Incorrecto:<br>
+                                •	Status:400<br>
+                                •	Body:<br>
+                                {<br>
+                                        "message”: “El usuario no fue eliminado"<br>
+                                }<br>
+                                No autorizado:<br>
+                                •	Status:500<br>
+                                •	Body:<br>
+                                {<br>
+                                        "message”: “Error en el servidor"<br>
+                                }       
+                        </td>
+                        </tr>
+                        </thead>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="container">
+        <h2>Actualizar usuario</h2>
+        <div class="table-style">
+            <table>
+                <thead>
+                    <th class="column">Numero</th>
+                    <th>5</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="column">Nombre del websirve</td>
+                        <td>Actualizar usuario </td>
+
+                    </tr>
+                    <tr>
+                        <td class="column">URL</td>
+                        <td>http://localhost:4000/actualizar/:id</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Descripcion</td>
+                        <td>El usuario puede actualizar los datos de un usuario a través de su ID</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Verbo HTTP</td>
+                        <td>PUT</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Header</td>
+                        <td>Parameter: {id} <br>
+                            Content-Type: application/json <br>
+                            Authorization Bearer {TOKEN}</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Usuario</td>
+                        <td>Administrador</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <div class="table-style-2">
+                <table>
+                    <tbody>
+                        <thead>
+                        <tr>
+                            <td class="column">Request bodyform-data</td>
+                            <td>{<br>
+                                "nombres":"Jorgito",<br>
+                                "direccion":"Cr10",<br>
+                                "telefono": 31242353,<br>
+                                "correo":"jogeelcurioso@gmail.com",<br>
+                                "rol":"usuario"<br>
+                            }</tr>
+                        <tr>
+                            <td class="column">Response</td>
+                            <td>Correcto <br>
+                                •	Status: 200 <br>
+                                •	Body:
+                                <br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class="column"></td>
+                            <td>{ <br>
+                                "message":"El usuario se actualizo con éxito"<br>
+                                }<br>
+                                Incorrecto:<br>
+                                •	Status:400<br>
+                                •	Body:<br>
+                                {<br>
+                                        "message”: “El usuario no fue actualizado"<br>
+                                }<br>
+                                No autorizado:<br>
+                                •	Status:500<br>
+                                •	Body:<br>
+                                {<br>
+                                        "message”: “Error en el servidor"<br>
+                                }           
+                        </td>
+                        </tr>
+                        </thead>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="main-container">
+        <h1>Documentacion juegos</h1>
+        <div class="container">
+        <h2>Ingresar juegos</h2>
+        <div class="table-style">
+            <table>
+                <thead>
+                    <th class="column">Numero</th>
+                    <th>6</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="column">Nombre del websirve</td>
+                        <td>Registrar un juego nuevo </td>
+
+                    </tr>
+                    <tr>
+                        <td class="column">URL</td>
+                        <td>http://localhost:4000/juego/ingresar</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Descripcion</td>
+                        <td>El usuario registrar un juego, el cual debe de ser ingresado con sus respectivos datos</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Verbo HTTP</td>
+                        <td>POST</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Header</td>
+                        <td>Content-Type: application/json
+                            Authorization Bearer {TOKEN}</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Usuario</td>
+                        <td>Administrador</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <div class="table-style-2">
+                <table>
+                    <tbody>
+                        <thead>
+                        <tr>
+                            <td class="column">Request bodyform-data</td>
+                            <td>{<br>
+                                "idjuego":12,<br>
+                                "nombre":" GTAV",<br>
+                                "descipcion":"Las leyes no existe",<br>
+                                "img":gtaV.png <br>
+                                "precio":23900<br>
+                            }</td>
+                        </tr>
+                        <tr>
+                            <td class="column">Response</td>
+                            <td>Correcto <br>
+                                •	Status: 200 <br>
+                                •	Body: <br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class="column"></td>
+                            <td>{ <br>
+                                "message”: “El juego se registró con éxito"<br>
+                        }<br>
+                        Incorrecto:<br>
+                        •	Status:401<br>
+                        •	Body:<br>
+                        {<br>
+                                "message”: “El juego no se registró"<br>
+                        }<br>
+                        No autorizado:<br>
+                        •	Status:500
+                        •	Body:<br>
+                        {
+                        <br>"message”: “Error en el servidor"<br>
+                        }
+                        
+                        
+                        </td>
+                        </tr>
+                        </thead>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="container">
+        <h2>Listar juegos</h2>
+        <div class="table-style">
+            <table>
+                <thead>
+                    <th class="column">Numero</th>
+                    <th>7</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="column">Nombre del websirve</td>
+                        <td>Listar juegos </td>
+
+                    </tr>
+                    <tr>
+                        <td class="column">URL</td>
+                        <td>http://localhost:4000/juego/listardatos</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Descripcion</td>
+                        <td>El usuario lista todos los juegos que están guardados en la base de datos</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Verbo HTTP</td>
+                        <td>GET</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Header</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="column">Usuario</td>
+                        <td>Administrador</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <div class="table-style-2">
+                <table>
+                    <tbody>
+                        <thead>
+                        <tr>
+                            <td class="column">Request bodyform-data</td>
+                            <td>No aplica</tr>
+                        <tr>
+                            <td class="column">Response</td>
+                            <td>Correcto <br>
+                                •	Status: 200 <br>
+                                •	Body:
+                                <br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class="column"></td>
+                            <td>{<br>
+                                "id juego": 2,<br>
+                                "nombre": "Legend of zelda",<br>
+                                "descripción": "Vamos link vamos",<br>
+                                "imagen": null,<br>
+                                "precio": "340000.00"<br>
+                            }<br>
+                        No autorizado:<br>
+                        •	Status:500
+                        •	Body:<br>
+                        {
+                        <br>"message”: “Error en el servidor"<br>
+                        }
+                        
+                        
+                        </td>
+                        </tr>
+                        </thead>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="container">
+        <h2>Buscar juego</h2>
+        <div class="table-style">
+            <table>
+                <thead>
+                    <th class="column">Numero</th>
+                    <th>8</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="column">Nombre del websirve</td>
+                        <td>Buscar juego </td>
+
+                    </tr>
+                    <tr>
+                        <td class="column">URL</td>
+                        <td>http://localhost:4000/juego/buscar/:id</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Descripcion</td>
+                        <td>El usuario puede buscar un juego con el id del mismo</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Verbo HTTP</td>
+                        <td>GET</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Header</td>
+                        <td>Parameter: {id}</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Usuario</td>
+                        <td>Administrador</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <div class="table-style-2">
+                <table>
+                    <tbody>
+                        <thead>
+                        <tr>
+                            <td class="column">Request bodyform-data</td>
+                            <td>No aplica</tr>
+                        <tr>
+                            <td class="column">Response</td>
+                            <td>Correcto <br>
+                                •	Status: 200 <br>
+                                •	Body:
+                                <br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class="column"></td>
+                            <td>{ <br>
+                                "idjuego": 5,<br>
+                                "nombre": "Minecraft",<br>
+                                "descripción": "El nether",<br>
+                                "imagen": null,<br>
+                                "precio": "770000.00"<br>
+                            }
+                            <br>
+                        No autorizado:<br>
+                        •	Status:500
+                        •	Body:<br>
+                        {
+                        <br>"message”: “Error en el servidor"<br>
+                        }
+                        
+                        
+                        </td>
+                        </tr>
+                        </thead>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="container">
+        <h2>Eliminar juego</h2>
+        <div class="table-style">
+            <table>
+                <thead>
+                    <th class="column">Numero</th>
+                    <th>9</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="column">Nombre del websirve</td>
+                        <td>Eliminar juego </td>
+
+                    </tr>
+                    <tr>
+                        <td class="column">URL</td>
+                        <td>http://localhost:4000/juego/eliminar/id</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Descripcion</td>
+                        <td>El usuario puede eliminar un juego a través de su ID</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Verbo HTTP</td>
+                        <td>DELETE</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Header</td>
+                        <td>Parameter: {id}
+                            Authorization Bearer {TOKEN}</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Usuario</td>
+                        <td>Administrador</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <div class="table-style-2">
+                <table>
+                    <tbody>
+                        <thead>
+                        <tr>
+                            <td class="column">Request bodyform-data</td>
+                            <td>No aplica</tr>
+                        <tr>
+                            <td class="column">Response</td>
+                            <td>Correcto <br>
+                                •	Status: 200 <br>
+                                •	Body:
+                                <br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class="column"></td>
+                            <td>{ <br>
+                                "message":"El juego se elimino con éxito"<br>
+                                }<br>
+                                Incorrecto:<br>
+                                •	Status:401<br>
+                                •	Body:<br>
+                                {<br>
+                                        "message”: “El juego no fue eliminado"<br>
+                                }<br>
+                                No autorizado:<br>
+                                •	Status:500<br>
+                                •	Body:<br>
+                                {<br>
+                                        "message”: “Error en el servidor"<br>
+                                }       
+                        </td>
+                        </tr>
+                        </thead>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="container">
+        <h2>Actualizar juego</h2>
+        <div class="table-style">
+            <table>
+                <thead>
+                    <th class="column">Numero</th>
+                    <th>10</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="column">Nombre del websirve</td>
+                        <td>Actualizar juego </td>
+
+                    </tr>
+                    <tr>
+                        <td class="column">URL</td>
+                        <td>http://localhost:4000/juego/actualizar/:id</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Descripcion</td>
+                        <td>El usuario puede actualizar los datos de un juego a través de su ID</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Verbo HTTP</td>
+                        <td>DELETE</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Header</td>
+                        <td>Parameter: {id} <br>
+                            Content-Type: application/json <br>
+                            Authorization Bearer {TOKEN}</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Usuario</td>
+                        <td>Administrador</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <div class="table-style-2">
+                <table>
+                    <tbody>
+                        <thead>
+                        <tr>
+                            <td class="column">Request bodyform-data</td>
+                            <td>{ <br>
+                                "nombre":"word cfaft",<br>
+                                "descipcion":"Es un juego",<br>
+                                "precio":23000<br>
+                            }</tr>
+                        <tr>
+                            <td class="column">Response</td>
+                            <td>Correcto <br>
+                                •	Status: 200 <br>
+                                •	Body:
+                                <br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class="column"></td>
+                            <td>{ <br>
+                                "message":"El juego se actualizo con éxito"<br>
+                                }<br>
+                                Incorrecto:<br>
+                                •	Status:401<br>
+                                •	Body:<br>
+                                {<br>
+                                        "message”: “El juego no fue actualizado"<br>
+                                }<br>
+                                No autorizado:<br>
+                                •	Status:500<br>
+                                •	Body:<br>
+                                {<br>
+                                        "message”: “Error en el servidor"<br>
+                                }           
+                        </td>
+                        </tr>
+                        </thead>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="main-container">
+        <h1>Documentacion alquiler</h1>
+        <div class="container">
+        <h2>Ingresar alquiler</h2>
+        <div class="table-style">
+            <table>
+                <thead>
+                    <th class="column">Numero</th>
+                    <th>11</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="column">Nombre del websirve</td>
+                        <td>Registrar el alquier de un juego </td>
+
+                    </tr>
+                    <tr>
+                        <td class="column">URL</td>
+                        <td>http://localhost:4000/alquiler/alquilar</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Descripcion</td>
+                        <td>El usuario registrar el alquiler de un juego, el cual debe de ser ingresado con sus respectivos datos</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Verbo HTTP</td>
+                        <td>POST</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Header</td>
+                        <td>Content-Type: application/json <br>
+                            Authorization Bearer {TOKEN}</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Usuario</td>
+                        <td>Administrador</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <div class="table-style-2">
+                <table>
+                    <tbody>
+                        <thead>
+                        <tr>
+                            <td class="column">Request bodyform-data</td>
+                            <td>{<br>
+                                "fecha_alquiler":"2023-06-07",<br>
+                                "cantidad": 4,<br>
+                                "estado": "prestamo",<br>
+                                "fk_usuario": 4,<br>
+                                "fk_juego": 12<br>
+                            }</td>
+                        </tr>
+                        <tr>
+                            <td class="column">Response</td>
+                            <td>Correcto <br>
+                                •	Status: 200 <br>
+                                •	Body: <br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class="column"></td>
+                            <td>{ <br>
+                                "message”: “El alquiler se registró con éxito"<br>
+                        }<br>
+                        Incorrecto:<br>
+                        •	Status:401<br>
+                        •	Body:<br>
+                        {<br>
+                                "message”: “El alquiler no se registró"<br>
+                        }<br>
+                        No autorizado:<br>
+                        •	Status:500
+                        •	Body:<br>
+                        {
+                        <br>"message”: “Error en el servidor"<br>
+                        }
+                        
+                        
+                        </td>
+                        </tr>
+                        </thead>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="container">
+        <h2>Listar alquileres</h2>
+        <div class="table-style">
+            <table>
+                <thead>
+                    <th class="column">Numero</th>
+                    <th>12</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="column">Nombre del websirve</td>
+                        <td>Listar alquileres </td>
+
+                    </tr>
+                    <tr>
+                        <td class="column">URL</td>
+                        <td>http://localhost:4000/alquiler/listar</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Descripcion</td>
+                        <td>El usuario lista todos los alquileres que están guardados en la base de datos</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Verbo HTTP</td>
+                        <td>GET</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Header</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="column">Usuario</td>
+                        <td>Administrador</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <div class="table-style-2">
+                <table>
+                    <tbody>
+                        <thead>
+                        <tr>
+                            <td class="column">Request bodyform-data</td>
+                            <td>No aplica</tr>
+                        <tr>
+                            <td class="column">Response</td>
+                            <td>Correcto <br>
+                                •	Status: 200 <br>
+                                •	Body:
+                                <br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class="column"></td>
+                            <td>{<br>
+                                "cliente": "Daniel",<br>
+                                "juego": "Legend of zelda",<br>
+                                "fecha_alquiler": "2023-09-07T05:00:00.000Z",<br>
+                                "fecha_devolucion": "2023-11-07T05:00:00.000Z",<br>
+                                "cantidad": 2,<br>
+                                "estado": "devolucion",<br>
+                                "imagen": null,<br>
+                                "precio_unidad": "340000.00",<br>
+                                "total": "680000.00"<br>
+                            },<br>
+                            {<br>
+                                "cliente": "Daniel",<br>
+                                "juego": "Minecraft",<br>
+                                "fecha_alquiler": "2023-09-07T05:00:00.000Z",<br>
+                                "fecha_devolucion": null,<br>
+                                "cantidad": 2,<br>
+                                "estado": "reserva",<br>
+                                "imagen": "minecraft.jpg",<br>
+                                "precio_unidad": "134000.00",<br>
+                                "total": "268000.00"<br>
+                            }<br>
+                        No autorizado:<br>
+                        •	Status:500<br>
+                        •	Body:<br>
+                        {
+                        <br>"message”: “Error en el servidor"<br>
+                        }
+                        
+                        
+                        </td>
+                        </tr>
+                        </thead>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="container">
+        <h2>Buscar alquiler</h2>
+        <div class="table-style">
+            <table>
+                <thead>
+                    <th class="column">Numero</th>
+                    <th>13</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="column">Nombre del websirve</td>
+                        <td>Buscar alquiler </td>
+
+                    </tr>
+                    <tr>
+                        <td class="column">URL</td>
+                        <td>hhttp://localhost:4000/alquiler/buscar/id</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Descripcion</td>
+                        <td>El usuario puede buscar el alquiler con el id del mismo</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Verbo HTTP</td>
+                        <td>GET</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Header</td>
+                        <td>Parameter: {id}</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Usuario</td>
+                        <td>Administrador</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <div class="table-style-2">
+                <table>
+                    <tbody>
+                        <thead>
+                        <tr>
+                            <td class="column">Request bodyform-data</td>
+                            <td>No aplica</tr>
+                        <tr>
+                            <td class="column">Response</td>
+                            <td>Correcto <br>
+                                •	Status: 200 <br>
+                                •	Body:
+                                <br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class="column"></td>
+                            <td>{ <br>
+                                "cliente": "Daniel",<br>
+                                "juego": "Warzone",<br>
+                                "fecha_alquiler": "2023-09-07T05:00:00.000Z",<br>
+                                "fecha_devolucion": "2023-12-07T05:00:00.000Z",<br>
+                                "cantidad": 2,<br>
+                                "estado": "devolucion",<br>
+                                "imagen": "Warzon.jpg",<br>
+                                "precio_unidad": "234000.00",<br>
+                                "total": "468000.00"<br>
+                            }
+                            <br>
+                        No autorizado:<br>
+                        •	Status:500
+                        •	Body:<br>
+                        {
+                        <br>"message”: “Error en el servidor"<br>
+                        }
+                        
+                        
+                        </td>
+                        </tr>
+                        </thead>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="container">
+        <h2>Eliminar alquiler</h2>
+        <div class="table-style">
+            <table>
+                <thead>
+                    <th class="column">Numero</th>
+                    <th>14</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="column">Nombre del websirve</td>
+                        <td>Eliminar alquiler </td>
+
+                    </tr>
+                    <tr>
+                        <td class="column">URL</td>
+                        <td>http://localhost:4000/alquiler/eliminar/id</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Descripcion</td>
+                        <td>El usuario puede eliminar los datos de un alquiler a través de su ID</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Verbo HTTP</td>
+                        <td>DELETE</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Header</td>
+                        <td>Parameter: {id} <br>
+                            Authorization Bearer {TOKEN}</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Usuario</td>
+                        <td>Administrador</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <div class="table-style-2">
+                <table>
+                    <tbody>
+                        <thead>
+                        <tr>
+                            <td class="column">Request bodyform-data</td>
+                            <td>No aplica</tr>
+                        <tr>
+                            <td class="column">Response</td>
+                            <td>Correcto <br>
+                                •	Status: 200 <br>
+                                •	Body:
+                                <br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class="column"></td>
+                            <td>{ <br>
+                                "message":"El alquiler se elimino con éxito"<br>
+                                }<br>
+                                Incorrecto:<br>
+                                •	Status:401<br>
+                                •	Body:<br>
+                                {<br>
+                                        "message”: “El alquiler no fue eliminado"<br>
+                                }<br>
+                                No autorizado:<br>
+                                •	Status:500<br>
+                                •	Body:<br>
+                                {<br>
+                                        "message”: “Error en el servidor"<br>
+                                }       
+                        </td>
+                        </tr>
+                        </thead>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="container">
+        <h2>Actualizar alquiler</h2>
+        <div class="table-style">
+            <table>
+                <thead>
+                    <th class="column">Numero</th>
+                    <th>15</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="column">Nombre del websirve</td>
+                        <td>Actualizar alquiler </td>
+
+                    </tr>
+                    <tr>
+                        <td class="column">URL</td>
+                        <td>http://localhost:4000/alquiler/actualizar/:id</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Descripcion</td>
+                        <td>El usuario puede actualizar los datos de un alquiler a través de su ID</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Verbo HTTP</td>
+                        <td>PUT</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Header</td>
+                        <td>Parameter: {id} <br>
+                            Content-Type: application/json <br>
+                            Authorization Bearer {TOKEN}</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Usuario</td>
+                        <td>Administrador</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <div class="table-style-2">
+                <table>
+                    <tbody>
+                        <thead>
+                        <tr>
+                            <td class="column">Request bodyform-data</td>
+                            <td>{<br>
+                                "fecha_devolucion":"2023-12-07",<br>
+                                "cantidad": 2,<br>
+                                "estado": "devolucion"<br>
+                            }</tr>
+                        <tr>
+                            <td class="column">Response</td>
+                            <td>Correcto <br>
+                                •	Status: 200 <br>
+                                •	Body:
+                                <br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class="column"></td>
+                            <td>{ <br>
+                                "message":"El alquiler se actualizo con éxito"<br>
+                                }<br>
+                                Incorrecto:<br>
+                                •	Status:401<br>
+                                •	Body:<br>
+                                {<br>
+                                        "message”: “El alquiler no fue actualizado"<br>
+                                }<br>
+                                No autorizado:<br>
+                                •	Status:500<br>
+                                •	Body:<br>
+                                {<br>
+                                        "message”: “Error en el servidor"<br>
+                                }           
+                        </td>
+                        </tr>
+                        </thead>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="main-container">
+        <h1>Documentacion alquiler</h1>
+        <div class="container">
+        <h2>Validacion</h2>
+        <div class="table-style">
+            <table>
+                <thead>
+                    <th class="column">Numero</th>
+                    <th>16</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="column">Nombre del websirve</td>
+                        <td>Validar usuario </td>
+
+                    </tr>
+                    <tr>
+                        <td class="column">URL</td>
+                        <td>http://localhost:4000/verificaion/validar</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Descripcion</td>
+                        <td>El usuario tendrá la potestad de validar usuarios por medio de la generación de tokens</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Verbo HTTP</td>
+                        <td>POST</td>
+                    </tr>
+                    <tr>
+                        <td class="column">Header</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="column">Usuario</td>
+                        <td>Administrador</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <div class="table-style-2">
+                <table>
+                    <tbody>
+                        <thead>
+                        <tr>
+                            <td class="column">Request bodyform-data</td>
+                            <td>{ <br> eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9. <br>
+                                eyJ1c2VyIjpbeyJpZHVzdWFyaW8iOjEyNiwibm9tYn<br>
+                                JlcyI6IkRhbmllbCIsInJvbCI6ImFkbWluaXN0<br>
+                                cmFkb3IifV0sImlhdCI6MTY5NTMzMzUxOCwiZX<br>
+                                hwIjoxNjk1NDE5OTE4fQ.PlAOnsfgFz9fCBErlBC0iQ4O4Kfx4iydLhHQb06arcg <br>
+                            }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column">Response</td>
+                            <td>Correcto <br>
+                                •	Status: 200 <br>
+                                •	Body: <br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class="column"></td>
+                            <td> Incorrecto: <br>
+                                • Status: 401 <br>
+                                • Body:<br>
+                            {<br>
+                                "message": "usuario no encontrado..."<br>
+                            }<br>
+                            No autorizado:<br>
+                                • Status: 500<br>
+                                • Body:<br>
+                            {<br>
+                                "message": " Error en el servidor"<br>
+                            }<br>
+                        
+                        </td>
+                        </tr>
+                        </thead>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

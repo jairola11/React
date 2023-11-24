@@ -1,0 +1,42 @@
+body{
+    background-color:  rgb(214, 214, 214);
+}
+.main-container{
+    border-bottom: 4px solid rgb(8, 15, 75);
+}
+h1,h2{
+    text-align: center;
+    color: black;
+}
+table{
+    border-collapse: collapse;
+    background-color: rgb(241, 241, 241);
+}
+.column{
+    background-color:  rgb(46, 204, 113);
+}
+td,th{
+    border: 2px solid black;
+}
+.container{
+    display: flexbox;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.table-style{
+    display: flex;
+    height: 100%;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 25px;
+}
+.table-style-2{
+    display: flex;
+    height: 100%;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 25px;
+}
